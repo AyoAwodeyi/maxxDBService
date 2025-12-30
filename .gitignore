@@ -32,4 +32,4 @@ build/
 ### VS Code ###
 .vscode/
 
-maxx-backendmem-firebase-adminsdk-fbsvc-6c60ce164f.json
+src/main/resources/maxx-backendmem-firebase-adminsdk-fbsvc-6c60ce164f.json
