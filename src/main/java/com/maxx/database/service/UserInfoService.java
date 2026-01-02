@@ -15,16 +15,13 @@ import java.util.concurrent.ExecutionException;
 public class UserInfoService {
 private  final Firestore   firestore;
 
-public Users something() throws ExecutionException, InterruptedException {
-  var docRef = firestore.collection("users").document("demo2");
+public void something() throws ExecutionException, InterruptedException {
+  var docRef = firestore.collection("users");
   var future = docRef.get();
   var snapShot = future.get();
+  System.out.println(snapShot);
 
-  if(snapShot.exists()){
-    return snapShot.toObject(Users.class);
-  }else {
-    return null;
-  }
+
 }
 
 
@@ -34,6 +31,8 @@ public String create(@NonNull final UserCreationDTO userCreationDTO){
     user.setGoal(userCreationDTO.getGoal());
     user.setGender(userCreationDTO.getGender());
     user.setPreferredName(userCreationDTO.getPreferredName());
+    user.setUID(userCreationDTO.getUID());
+
 
   try{
     DocumentReference documentReference = firestore.collection("users").add(user).get();

@@ -19,8 +19,8 @@ public class UserInfoController {
 private final UserInfoService userInfoService;
 
     @GetMapping("/pleaseWork")
-    public ResponseEntity<Users> getUser () throws ExecutionException, InterruptedException {
-       return  ResponseEntity.ok(userInfoService.something());
+    public void getUser () throws ExecutionException, InterruptedException {
+       System.out.println();
     }
 
     @PostMapping("/createUser")

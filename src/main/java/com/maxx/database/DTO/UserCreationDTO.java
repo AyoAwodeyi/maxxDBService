@@ -7,6 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserCreationDTO {
+    String UID;
     String age;
     String gender;
     String goal;
